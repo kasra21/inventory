@@ -1,6 +1,7 @@
 package com.task.inventory.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,8 +25,9 @@ public class ItemController {
     }
     
     @PostMapping("/api/items")
-    public Item createItem(@RequestBody Item newItem) {
+    public ResponseEntity<Item> createItem(@RequestBody Item newItem) {
     	System.out.println("Received new item: " + newItem);
-        return itemRepository.save(newItem);
+        Item createdItem = itemRepository.save(newItem);
+        return ResponseEntity.ok(createdItem);
     }
 }

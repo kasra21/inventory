@@ -14,6 +14,7 @@
 
 # Test API
 - By default it will run on http://localhost:8080 with user: admin and pass: admin123 (see application.properties)
-- can run the APIs with curl or on postman. For example:
+- You can access documentations about the APIs from the swagger: `localhost:8080/swagger-ui.html`
+- You may also run the APIs with curl or on postman. For example:
 	- `curl -u admin:admin123 http://localhost:8080/api/items`
 	- `curl -u admin:admin123 -X POST http://localhost:8080/api/items      -H "Content-Type: application/json"      -d '{"name": "iPad", "quantity": 15, "price": 499.99}'`
